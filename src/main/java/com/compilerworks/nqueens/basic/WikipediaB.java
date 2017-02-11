@@ -1,4 +1,7 @@
-package com.compilerworks.nqueens;
+package com.compilerworks.nqueens.basic;
+
+import com.compilerworks.nqueens.Predicates;
+import com.compilerworks.nqueens.Solver;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,7 +45,7 @@ public class WikipediaB implements Solver {
 		solution.addAll(evens);
 		solution.addAll(odds);
 
-		return solution;
+		return solution.stream().map(k -> k - 1).collect(toList());
 	}
 
 	private static List<Integer> evensLessThanN(int n) {
@@ -54,7 +57,7 @@ public class WikipediaB implements Solver {
 	}
 
 	private static List<Integer> numbersLessThanN(IntPredicate filter, int n) {
-		return IntStream.range(0, n)
+		return IntStream.range(1, n + 1)
 				.filter(filter)
 				.boxed()
 				.collect(toList());

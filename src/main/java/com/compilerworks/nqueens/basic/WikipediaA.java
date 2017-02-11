@@ -1,4 +1,6 @@
-package com.compilerworks.nqueens;
+package com.compilerworks.nqueens.basic;
+
+import com.compilerworks.nqueens.Solver;
 
 import java.util.ArrayList;
 import java.util.Collections;
