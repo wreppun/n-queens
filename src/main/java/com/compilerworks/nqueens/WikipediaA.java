@@ -24,18 +24,18 @@ public class WikipediaA implements Solver {
 		List<Integer> solution = new ArrayList<>(Collections.nCopies(n, 0));
 
 		if (isEven(n) && n % 6 != 2) {
-			for (int i = 0; i < n / 2; i++) {
-				solution.set(i, 2 * i);
-				solution.set(n / 2 + i, 2 * i - 1);
+			for (int i = 1; i <= n / 2; i++) {
+				solution.set(i - 1, 2 * i - 1);
+				solution.set(n / 2 + i - 1, 2 * i - 2);
 			}
 		} else if (isEven(n) && n % 6 != 0) {
-			for (int i = 0; i < n / 2; i++) {
-				solution.set(i, 1 + (2 * i + n / 2 - 3) % n);
-				solution.set(n + 1 - i, n - (2 * i + n / 2 - 3) % n);
+			for (int i = 1; i <= n / 2; i++) {
+				solution.set(i - 1, (2 * i + n / 2 - 3) % n);
+				solution.set(n - i, (n - 1) - (2 * i + n / 2 - 3) % n);
 			}
 		} else {
 			solution = singleSolution(n - 1);
-			solution.add(n);
+			solution.add(n - 1);
 		}
 
 		return solution;
