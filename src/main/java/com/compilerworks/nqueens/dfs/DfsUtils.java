@@ -7,6 +7,9 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class DfsUtils {
+	// Assumes that the existing placements are in the columns 0 -> (k-1), and we're looking
+	// for possibles in the k column;
+	//
 	// Intuitively seems faster than an isSafe check on each column square.
 	// Assuming that each placement removes at least one square from the subsequent column (valid assumption?)
 	// that means that there will at least be one check in the subsequent row that will fail on (column - 2) and one
