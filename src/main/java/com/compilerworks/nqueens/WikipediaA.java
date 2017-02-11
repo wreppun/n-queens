@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static com.compilerworks.nqueens.Predicates.isEven;
+
 /**
  * The examples above can be obtained with the following formulas. Let (i, j) be the square in column i and row j on the n × n chessboard, k an integer.
  *
@@ -37,9 +39,5 @@ public class WikipediaA implements Solver {
 		}
 
 		return solution;
-	}
-
-	private boolean isEven(int n) {
-		return n % 2 == 0;
 	}
 }
