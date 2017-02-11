@@ -43,26 +43,10 @@ public class ExhaustiveDfsTest {
 
 
 	@Test
-	public void exhaustiveSolutions() {
-		int n = 0;
-
-		List<List<Integer>> solutions;
-
-		solutions = fixture.solve(n);
-
-		System.out.println(solutions);
-
-		long count = solutions.size();
-		long expected = allSolutionsCount.get(n);
-
-		assertEquals(expected, count);
-	}
-
-	@Test
 	public void exhaustiveSolutionsCount() {
 		List<List<Integer>> solutions;
 
-		for (int i = 1; i < 15; i++) {
+		for (int i = 1; i < 14; i++) {
 			long start = System.currentTimeMillis();
 
 			solutions = fixture.solve(i);
